@@ -51,13 +51,12 @@ public class Main {
         String[] letra = null;
 
 
-        String palavraCriptografada= "";
-        String palavraDesCriptografada= "";
-
+        StringBuilder palavraCriptografada= new StringBuilder();
+        StringBuilder palavraDesCriptografada= new StringBuilder();
 
         for (int i=0;  i< palavra.length();i++) {
             letra = palavra.split("");
-            palavraCriptografada += main.criptografarPalavra(alfabeto, letra[i], k);
+            palavraCriptografada.append(main.criptografarPalavra(alfabeto, letra[i], k));
         }
         System.out.print("Palavra Criptografada: ");
         System.out.println(palavraCriptografada);
@@ -67,8 +66,8 @@ public class Main {
         int qtdLetraPalvra = palavraCriptografada.length();
 
         for (int i=0;  i< qtdLetraPalvra;i++) {
-            letra = palavraCriptografada.split("");
-            palavraDesCriptografada += main.desCriptografarPalavra(alfabeto, letra[i], k);
+            letra = palavraCriptografada.toString().split("");
+            palavraDesCriptografada.append(main.desCriptografarPalavra(alfabeto, letra[i], k));
         }
 
         System.out.print("Palavra Descriptografada: ");
